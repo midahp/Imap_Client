@@ -11,6 +11,7 @@
  * @package    Imap_Client
  * @subpackage UnitTests
  */
+namespace Horde\Imap\Client\Cache;
 
 /**
  * Tests for the Horde_Cache cache driver.
@@ -23,7 +24,7 @@
  * @package    Imap_Client
  * @subpackage UnitTests
  */
-class Horde_Imap_Client_Cache_CacheTest extends Horde_Imap_Client_Cache_TestBase
+class CacheTest extends TestBase
 {
     protected function _getBackend()
     {
