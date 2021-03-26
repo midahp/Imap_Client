@@ -52,5 +52,13 @@ jobs:
         COMPOSER_ROOT_VERSION=dev-FRAMEWORK_6_0 composer require --dev horde/test dev-FRAMEWORK_6_0 horde/log dev-FRAMEWORK_6_0
     - name: install horde/db ^3
       run: composer require horde/db ^3
+    - name: install horde/cli ^3
+      run: composer require horde/cli ^3
+    - name: install horde/cache ^3
+      run: composer require horde/cache ^3
+    - name: install horde/hashtable ^2
+      run: composer require horde/hashtable ^2
+    - name: install horde/pack ^2
+      run: composer require horde/pack ^2
     - name: run phpunit
       run: phpunit --bootstrap test/Horde/Imap/Client/bootstrap.php test/Horde/Imap/Client/

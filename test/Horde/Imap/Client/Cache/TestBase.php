@@ -13,6 +13,7 @@
  */
 namespace Horde\Imap\Client\Cache;
 use Horde_Test_Case as TestCase;
+use \Horde_Imap_Client_Cache;
 
 /**
  * Tests for the Horde_Cache cache driver.
@@ -35,7 +36,11 @@ abstract class TestBase extends TestCase
 
     public function setUp(): void
     {
-        $baseob = $this->getMockBuilder('Horde_Imap_Client_Socket', array(), array(), "", false)
+        $baseob = $this->getMockBuilder('Horde_Imap_Client_Socket')
+                            ->setMethods(array())
+                            ->setConstructorArgs(array())
+                            ->setMockClassName("")
+                            ->disableOriginalConstructor()
                             ->getMock();
         $baseob->expects($this->any())
             ->method('getParam')

@@ -12,6 +12,8 @@
  * @subpackage UnitTests
  */
 namespace Horde\Imap\Client\Cache;
+use \Horde_Test_Factory_Cache;
+use \Horde_Imap_Client_Cache_Backend_Cache;
 
 /**
  * Tests for the Horde_Cache cache driver.

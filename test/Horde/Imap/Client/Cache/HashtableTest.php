@@ -12,6 +12,8 @@
  * @subpackage UnitTests
  */
 namespace Horde\Imap\Client\Cache;
+use \Horde_Test_Factory_Hashtable;
+use \Horde_Imap_Client_Cache_Backend_Hashtable;
 
 /**
  * Tests for the Horde_HashTable cache driver.
@@ -30,12 +32,12 @@ class HashtableTest extends TestBase
     {
         $factory_hashtable = new Horde_Test_Factory_Hashtable();
 
-        try {
+        if (!class_exists('Horde_Imap_Client_Cache_Backend_Hashtable')) {
+            $this->markTestSkipped('HashTable not available.');
+        } else {
             return new Horde_Imap_Client_Cache_Backend_Hashtable(array(
                 'hashtable' => $factory_hashtable->create()
             ));
-        } catch (Horde_Test_Exception $e) {
-            $this->markTestSkipped('HashTable not available.');
         }
     }
 
